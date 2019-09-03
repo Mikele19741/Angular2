@@ -7,11 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarsComponent {
 
-  canAddCars=false;
-  constructor (){
-    setTimeout(()=>{
-      this.canAddCars=true
-    }, 4000)
-  }
+ addCarsStatus='';
+ inputText='';
+ constructor(){
 
+ }
+   addCar()
+   {
+     this.addCarsStatus='Машина добавлена';
+   }
+   onKeyUp(value)
+   {
+     this.inputText=value;
+   }
 }
