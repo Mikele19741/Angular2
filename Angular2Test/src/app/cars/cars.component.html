@@ -4,7 +4,8 @@
 <app-car></app-car>
 <app-car></app-car>
 <hr>
-<input type="text" class="form-contol" #muInput (keyup.enter)="onKeyUp(muInput.value)">
+<input type="text" class="form-contol" #muInput (keyup.enter)="onKeyUp($event)">
+<input type="text" class="form-contol"  [(ngModel)]="inputText">
 <p>{{ inputText}}</p>
 
 
