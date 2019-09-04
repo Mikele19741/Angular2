@@ -1,5 +1,11 @@
+<input type="text" class="form-contol"  [(ngModel)]="carName">
 <button  class="btn btn-primary" (click)="addCar()">Добавить машину</button>
-{{addCarsStatus}}
+
+
+<p *ngIf="!addCarsStatus; else successStatus">Машина Не Добавлена!</p>
+<ng-template #successStatus>
+    <p >Машина Добавлена!</p>
+</ng-template>
 <hr>
 <app-car></app-car>
 <app-car></app-car>
@@ -7,5 +13,7 @@
 <input type="text" class="form-contol" #muInput (keyup.enter)="onKeyUp($event)">
 <input type="text" class="form-contol"  [(ngModel)]="inputText">
 <p>{{ inputText}}</p>
+
+<hr>
 
 
