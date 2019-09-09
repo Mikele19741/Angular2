@@ -1,39 +1,14 @@
 <input type="text" class="form-contol"  [(ngModel)]="carName">
+<input type="text" class="form-contol"  [(ngModel)]="carYear">
 <button  class="btn btn-primary" (click)="addCar()">Добавить машину</button>
 
 
-<p *ngIf="!addCarsStatus; else successStatus">Машина Не Добавлена!</p>
-<ng-template #successStatus>
-    <p >Машина Добавлена!</p>
-</ng-template>
-<hr>
-
-<app-car *ngFor="let car of cars"></app-car>
-<hr>
-<input type="text" class="form-contol" #muInput (keyup.enter)="onKeyUp($event)">
-<input type="text" class="form-contol"  [(ngModel)]="inputText">
-<p>{{ inputText}}</p>
-
-<hr>
-<ul>
-    <li *ngFor="let car of cars let idx=index">
-    <div 
-    [ngStyle]="{backgroundColor:(idx+1)%2===0?  'red': 'green', color:'white'}"
-    [ngClass]="{'big-text': setBigCarText(car)}"
-    
-    ><b>{{idx}}</b> -<i>{{car}}</i></div>
-</li>
-</ul>
 
 
+<app-car *ngFor="let car of cars" [carItem]="car"></app-car>
 <hr>
-<ul>
-    <li *ngFor="let date of dates let idx=index">
-    <div 
-   
-    
-    ><b>{{idx}}</b> -<i>{{date | date: 'short'}}</i></div>
-</li>
-</ul>
+
+
+
 
 
