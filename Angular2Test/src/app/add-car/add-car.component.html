@@ -1,0 +1,5 @@
+<!--<input type="text" class="form-contol"  [(ngModel)]="carName">-->
+
+<input type="text" class="form-contol"  #carNameInput>
+<input type="text" class="form-contol"  #carYearInput>
+<button  class="btn btn-primary" (click)="addCar(carNameInput)">Добавить машину</button>

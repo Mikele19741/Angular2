@@ -1,16 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-cars',
   templateUrl: './cars.component.html',
-  styleUrls: ['./cars.component.css']
+  styleUrls: ['./cars.component.css'],
+  encapsulation: ViewEncapsulation.Native
 })
 export class CarsComponent {
 
 
  inputText='';
- carName='';
- carYear=2017;
+
   addCarsStatus=false;
   cars = 
   [{name:"Ford",
@@ -20,13 +20,7 @@ export class CarsComponent {
  constructor(){
 
  }
-   addCar()
-   {
-     this.addCarsStatus=true;
-     this.cars.push({name: this.carName, year: this.carYear});
-     this.carName='';
-     this.carYear=2017;
-   }
+ 
    onKeyUp(value)
    {
      this.inputText=value;
@@ -34,5 +28,9 @@ export class CarsComponent {
    setBigCarText(car:string)
    {
       return car.length>3 ? true:false;
+   }
+   updateCarList(car: {name: string, year:number})
+   {
+      this.cars.push(car);
    }
 }
