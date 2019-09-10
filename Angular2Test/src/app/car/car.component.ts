@@ -1,5 +1,6 @@
 
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewChild, ElementRef } from '@angular/core';
+import { stat } from 'fs';
 
 @Component({
   selector: 'app-car',
@@ -10,5 +11,9 @@ export class CarComponent {
 
 @Input('carItem') car: {name: string, year: number}
 
-private carItem=false;
+
+constructor()
+{
+
+}
 }

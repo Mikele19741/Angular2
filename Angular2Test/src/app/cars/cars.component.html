@@ -2,7 +2,12 @@
 <p>Форма добавления машины</p>
 <hr>
 <app-add-car (onAddCar)="updateCarList($event)"></app-add-car>
-<app-car *ngFor="let car of cars" [carItem]="car"></app-car>
+
+<div class="list-group">
+    <app-car class=list-group-item *ngFor="let car of cars" [carItem]="car"></app-car>
+<div calss="alert alert-info">Машина продана</div>
+</div>
+
 <hr>
 
 
