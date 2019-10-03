@@ -1,12 +1,17 @@
 import { Component} from '@angular/core';
 import { CarsService } from './cars.service';
-
+/////https://github.com/typicode/json-server
+interface Cars{
+  name: string;
+  color:string;
+  id:number;
+}
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  cars = [
+  cars: Cars[] = [
   ];
   constructor(private carsServ: CarsService)
   {
@@ -15,9 +20,9 @@ export class AppComponent {
  
   loadCars()
   {
-    this.carsServ.getCars().subscribe((data: any[])=>{
-      console.log(data);
-      this.cars = data;
+    this.carsServ.getCars().subscribe((cars: Cars[])=>{
+     
+      this.cars = cars;
     });
      
   }

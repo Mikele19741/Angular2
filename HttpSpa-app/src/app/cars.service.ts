@@ -10,6 +10,6 @@ export class CarsService
       
     }
     getCars() {
-       return  this.http.get('http://localhost:3000/cars') 
+       return  this.http.get('http://localhost:3000/cars');
     }
 }
