@@ -1,6 +1,34 @@
 {
-  "cars":[
-    {"name": "Ford",
+  "cars": [
+    {
+      "name": "Ford",
       "color": "white",
-      "id": 1}]
+      "id": 1
+    },
+    {
+      "name": "Lada",
+      "color": "blue",
+      "id": 2
+    },
+    {
+      "name": "Audi",
+      "color": "blue",
+      "id": 3
+    },
+    {
+      "name": "BMW",
+      "color": "blue",
+      "id": 4
+    },
+    {
+      "name": "Renault",
+      "color": "blue",
+      "id": 5
+    },
+    {
+      "name": "Mersedes",
+      "color": "blue",
+      "id": 6
+    }
+  ]
 }
