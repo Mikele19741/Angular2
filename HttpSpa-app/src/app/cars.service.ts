@@ -20,4 +20,8 @@ export class CarsService
     getCars() {
        return  this.http.get('http://localhost:3000/cars');
     }
+    changeColor(car: any, color:string){
+        car.color=color;
+        return  this.http.put('http://localhost:3000/cars/'+car.id, {car});
+    }
 }

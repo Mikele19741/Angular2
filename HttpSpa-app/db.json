@@ -1,33 +1,51 @@
 {
   "cars": [
     {
-      "name": "Ford",
-      "color": "white",
+      "car": {
+        "name": "Ford",
+        "color": "grey",
+        "id": 1
+      },
       "id": 1
     },
     {
-      "name": "Lada",
-      "color": "blue",
+      "car": {
+        "name": "Lada",
+        "color": "green",
+        "id": 2
+      },
       "id": 2
     },
     {
-      "name": "Audi",
-      "color": "blue",
+      "car": {
+        "name": "Audi",
+        "color": "yellow",
+        "id": 3
+      },
       "id": 3
     },
     {
-      "name": "BMW",
-      "color": "blue",
+      "car": {
+        "name": "BMW",
+        "color": "yellow",
+        "id": 4
+      },
       "id": 4
     },
     {
-      "name": "Renault",
-      "color": "blue",
+      "car": {
+        "name": "Renault",
+        "color": "yellow",
+        "id": 5
+      },
       "id": 5
     },
     {
-      "name": "Mersedes",
-      "color": "blue",
+      "car": {
+        "name": "Mersedes",
+        "color": "pink",
+        "id": 6
+      },
       "id": 6
     }
   ]

@@ -13,6 +13,9 @@ interface Cars{
 export class AppComponent {
   cars: Cars[] = [
   ];
+  colors =[
+    'res', 'blue', 'green', 'pink', 'yellow', 'grey'
+  ]
   carName:string='';
   constructor(private carsServ: CarsService)
   {
@@ -35,5 +38,17 @@ export class AppComponent {
        
         this.cars.push(car);
   });
+ 
+}
+getRandColor() {
+ const num=Math.round(Math.random() * (this.colors.length-1));
+ return this.colors[num];
+}
+setNewColor(car: Cars){
+  this.carsServ.changeColor(car, this.getRandColor() ).subscribe((car: Cars)=>{
+     
+       return this.cars
+   
+});
 }
 }
