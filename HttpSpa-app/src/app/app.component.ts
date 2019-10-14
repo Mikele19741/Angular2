@@ -45,19 +45,21 @@ getRandColor() {
  return this.colors[num];
 }
 setNewColor(car: Cars){
-  this.carsServ.changeColor(car, this.getRandColor() ).subscribe((car: Cars[])=>{
-     
-       return this.cars;
+  this.carsServ.changeColor(car, this.getRandColor())
+      .subscribe((data) => {
+        console.log(data);
+      });
    
-});
+
 }
 
 deleteCar(car: Cars){
-  this.carsServ.deleteCar(car).subscribe((cars: Cars[])=>{
-     
-    this.cars = cars;
-  
+  this.carsServ.deleteCar(car).subscribe((data) => {
+    this.cars = this.cars.filter(c => c.id !== car.id);
   });
+  
+ 
+  
    
 
 }
