@@ -8,6 +8,7 @@
     <li class="list-group-item" *ngFor="let car of cars">
       <span class="badge" [ngStyle]="{background: car.color}">{{car.id}}</span> {{car.name}} 
       <button class="btn btn-info btn-xs" (click)="setNewColor(car)">Изменить цвет</button>
+      <button class="btn btn-danger btn-xs" (click)="deleteCar(car)">Удалить машину</button>
     </li>
   </ul>
 </div>

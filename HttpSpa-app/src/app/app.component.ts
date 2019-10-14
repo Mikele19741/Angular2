@@ -45,10 +45,20 @@ getRandColor() {
  return this.colors[num];
 }
 setNewColor(car: Cars){
-  this.carsServ.changeColor(car, this.getRandColor() ).subscribe((car: Cars)=>{
+  this.carsServ.changeColor(car, this.getRandColor() ).subscribe((car: Cars[])=>{
      
-       return this.cars
+       return this.cars;
    
 });
+}
+
+deleteCar(car: Cars){
+  this.carsServ.deleteCar(car).subscribe((cars: Cars[])=>{
+     
+    this.cars = cars;
+  
+  });
+   
+
 }
 }
