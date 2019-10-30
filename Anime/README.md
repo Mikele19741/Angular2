@@ -9,7 +9,18 @@ animations:[
 
 </div>
 
-2. Different states
+2. Complex animations
+ trigger('multi', [
+      state('start',style({border:'5px solid black', width: '150px', height:'150px'})),
+     state('end', style({background:'blue', width: '170px', height:'170px'})),
+     transition('start <=> end', [
+       style({
+         background: 'red'
+       }), animate(1500, style({
+        background: 'yellow'
+       })), animate(1000)
+     ]), 
+    ])
 
   
   
