@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { trigger, style, state, transition, animate } from '@angular/animations';
+import { divTrigger, changeWithTrigger } from './app.animations';
 
 @Component({
   selector: 'app-root',
@@ -23,12 +24,13 @@ import { trigger, style, state, transition, animate } from '@angular/animations'
         background: 'yellow'
        })), animate(1000)
      ]), 
-    ])
+    ]), divTrigger, changeWithTrigger
   ]
 })
 export class AppComponent {
   clickedDivState='start';
   multiState='start';
+  isVisible=false;
   changeDivState()
   {
     this.clickedDivState='end';

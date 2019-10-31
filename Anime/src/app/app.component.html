@@ -3,11 +3,27 @@
 > 
 
 </div>
+<hr>
 <div
 (click)="multiState=multiState==='start'? 'end' :'start'"
 [@multi]="multiState"
 
 >
 
+
+</div>
+<hr>
+<hr>
+<button class="btn btn-primary" (click)="isVisible=!isVisible">Переключить</button>
+<hr>
+<div class="alert alert-danger"
+*ngIf="isVisible"
+[@divTrigger]="isVisible ? 'show': 'hide'">
+bla bla bla
+</div>
+<hr>
+<div 
+[@changeWith]="isVisible ? 'a': 'b'"
+style="height:250px; width:200px; background-color: red;">
 
 </div>

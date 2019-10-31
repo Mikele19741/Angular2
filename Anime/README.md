@@ -21,6 +21,19 @@ animations:[
        })), animate(1000)
      ]), 
     ])
+  3. Empty state
+  export const changeWithTrigger=trigger('changeWith', [
+
+    transition('*=>*', [animate(1000, style({
+      
+        height:'10px'
+    })),
+    animate(1000, style({
+       
+        height:'*'
+    }))
+
+])
 
   
   
