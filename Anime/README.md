@@ -68,5 +68,17 @@ export  const divTrigger=trigger('divTrigger', [
     
 ]);
 
+4 Events 
+(@divTrigger.start)="onAnimationStart($event)"
+(@divTrigger.done)="onAnimationDone($event)">
+onAnimationDone(event: AnimationEvent)
+  {
+
+  }
+  onAnimationStart(event: AnimationEvent)
+  {
+
+  }
+
   
   
