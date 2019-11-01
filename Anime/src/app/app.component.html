@@ -27,3 +27,13 @@ bla bla bla
 style="height:250px; width:200px; background-color: red;">
 
 </div>
+<hr>
+<div 
+@divTrigger
+class="alert alert-danger"
+*ngIf="isVisible"
+(@divTrigger.start)="onAnimationStart($event)"
+(@divTrigger.done)="onAnimationDone($event)">
+EVENTS
+</div>
+<hr>

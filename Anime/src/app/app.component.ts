@@ -36,4 +36,13 @@ export class AppComponent {
     this.clickedDivState='end';
     setTimeout(()=>{this.clickedDivState='start';},3000);
   }
+
+  onAnimationDone(event: AnimationEvent)
+  {
+
+  }
+  onAnimationStart(event: AnimationEvent)
+  {
+
+  }
 }

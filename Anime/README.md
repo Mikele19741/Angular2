@@ -34,6 +34,39 @@ animations:[
     }))
 
 ])
+3. Group and Keyframes functions
+export  const divTrigger=trigger('divTrigger', [
+
+  ///void =>*
+   transition(':enter', [
+        style({
+            height:'*',
+            width:'*'
+        }),
+        group([
+            animate(2000, style({
+                height:'200px',
+                width:'200px'
+            
+            })),
+            animate(6000, keyframes([
+                style({
+                    backgroundColor:'blue'
+                }),
+                style({
+                    backgroundColor:'yellow'
+                }),
+                style({
+                    backgroundColor:'pink'
+                })
+            ]) )
+        ]),
+        
+        animate(1000)
+        ])
+        
+    
+]);
 
   
   
