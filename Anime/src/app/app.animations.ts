@@ -1,19 +1,34 @@
-import { trigger, style, state, transition, animate } from '@angular/animations';
+import { trigger, style, state, group, transition, animate, keyframes } from '@angular/animations';
 export  const divTrigger=trigger('divTrigger', [
 
   ///void =>*
    transition(':enter', [
         style({
-            opacity:0 
-         }), animate(500,  style({
-            opacity:1 
-         }))
+            height:'*',
+            width:'*'
+        }),
+        group([
+            animate(2000, style({
+                height:'200px',
+                width:'200px'
+            
+            })),
+            animate(6000, keyframes([
+                style({
+                    backgroundColor:'blue'
+                }),
+                style({
+                    backgroundColor:'yellow'
+                }),
+                style({
+                    backgroundColor:'pink'
+                })
+            ]) )
         ]),
-        ///*=>void
-         transition(':leave', 
-            animate(500,  style({
-                opacity:0 
-             })))
+        
+        animate(1000)
+        ])
+        
     
 ]);
 
