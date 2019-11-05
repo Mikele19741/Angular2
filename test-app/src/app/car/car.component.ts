@@ -9,14 +9,15 @@ import { CarService } from './car.service';
 })
 export class CarComponent implements OnInit {
  isCarVisible:boolean;
-  
+  carName:string;
 title='MyCarHeader';
 constructor(private carServce:CarService)
 {
 
 }
   ngOnInit() {
-    this.isCarVisible=this.carServce.getVisibility()
+    this.isCarVisible=this.carServce.getVisibility();
+    this.carServce.getCarName().subscribe(carName=>this.carName=carName);
   }
-
+  
 }
