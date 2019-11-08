@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { UserService } from "src/app/shared/sevices/UserService";
+import { User } from 'src/app/shared/models/user.models';
 
 @Component({
   selector: 'wfm-login',
@@ -9,7 +11,9 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
    form: FormGroup;
-  constructor() { }
+  constructor(  private userService: UserService) {
+  
+  }
 
   ngOnInit() {
     this.form=new FormGroup({
@@ -19,6 +23,26 @@ export class LoginComponent implements OnInit {
   }
    onSubmit()
    {
-       console.log(this.form);
+       const fromData=this.form.value;
+      
+        this.userService.getUserByEmail(fromData.email).subscribe((user: User)=>{
+     
+          if(user)
+          {
+             if(user.password===fromData.password)
+             {
+
+             }
+             else{
+                alert('Нет такого password')
+             }
+          }
+          else{
+            alert('Нет такого')
+          }
+        
+        });
+       
+      
    }
 }
