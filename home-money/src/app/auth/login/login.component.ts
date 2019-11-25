@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService } from "src/app/shared/sevices/UserService";
 import { User } from 'src/app/shared/models/user.models';
+import { Message } from 'src/app/shared/models/message.model';
 
 @Component({
   selector: 'wfm-login',
@@ -12,15 +13,24 @@ export class LoginComponent implements OnInit {
 
    form: FormGroup;
   currentUser: User;
+  message: Message;
   constructor(  private userService: UserService) {
   
   }
 
   ngOnInit() {
+    this.message=new Message('danger', '')
     this.form=new FormGroup({
       'email': new FormControl(null, [Validators.required, Validators.email]),
       'password': new FormControl(null, [Validators.required , Validators.minLength(6)])
     });
+  }
+  showMessage(text: string, type: string='danger')
+  {
+      this.message=new Message(type, text);
+      window.setTimeout(()=>{
+        this.message.text='';
+      }, 5000)
   }
    onSubmit()
    {
@@ -35,14 +45,14 @@ export class LoginComponent implements OnInit {
           {
              if(this.currentUser[0].password===fromData.password)
              {
-              alert('Ура')
+              this.showMessage('Ура')
              }
              else{
-                alert('Нет такого password')
+              this.showMessage('Пароль не верный')
              }
           }
           else{
-            alert('Нет такого')
+            this.showMessage('Нет такого пользователя')
           }
         
         });
