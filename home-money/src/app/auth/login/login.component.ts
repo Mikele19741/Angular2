@@ -11,6 +11,7 @@ import { User } from 'src/app/shared/models/user.models';
 export class LoginComponent implements OnInit {
 
    form: FormGroup;
+  currentUser: User;
   constructor(  private userService: UserService) {
   
   }
@@ -24,14 +25,17 @@ export class LoginComponent implements OnInit {
    onSubmit()
    {
        const fromData=this.form.value;
-      
-        this.userService.getUserByEmail(fromData.email).subscribe((user: User)=>{
-     
-          if(user)
-          {
-             if(user.password===fromData.password)
-             {
+       
 
+          this.userService.getUserByEmail(fromData.email).subscribe((user: User) => {
+            this.currentUser = user;
+       
+        
+          if(this.currentUser)
+          {
+             if(this.currentUser[0].password===fromData.password)
+             {
+              alert('Ура')
              }
              else{
                 alert('Нет такого password')

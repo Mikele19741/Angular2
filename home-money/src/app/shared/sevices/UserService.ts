@@ -6,6 +6,6 @@ export class UserService {
     }
     getUserByEmail(email: string) {
         
-         return this.http.get('http://localhost:3000/users?email=wfm@mail.ru');
+         return this.http.get('http://localhost:3000/users?email='+email);
     }
 }
