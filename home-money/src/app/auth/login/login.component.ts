@@ -5,7 +5,7 @@ import { User } from 'src/app/shared/models/user.models';
 import { Message } from 'src/app/shared/models/message.model';
 import { AuthService } from 'src/app/shared/sevices/auth.service';
 import { Route } from '@angular/compiler/src/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'wfm-login',
@@ -19,20 +19,28 @@ export class LoginComponent implements OnInit {
   message: Message;
   constructor(  private userService: UserService,
     private authService: AuthService,
-    private route: Router ) {
+    private route: Router,
+    private routes: ActivatedRoute  ) {
   
   }
 
   ngOnInit() {
     this.message=new Message('danger', '')
+    this.routes.queryParams.subscribe((params: Params)=>{
+        if(params['nowCanLogin'])
+        {
+          this.showMessage({text: 'Поздраввляем Вы с нами', type: 'success'})
+        }
+    });
+  
     this.form=new FormGroup({
       'email': new FormControl(null, [Validators.required, Validators.email]),
       'password': new FormControl(null, [Validators.required , Validators.minLength(6)])
     });
   }
-  showMessage(text: string, type: string='danger')
+  showMessage(message: Message)
   {
-      this.message=new Message(type, text);
+      this.message=message;
       window.setTimeout(()=>{
         this.message.text='';
       }, 5000)
@@ -57,11 +65,11 @@ export class LoginComponent implements OnInit {
              
              }
              else{
-              this.showMessage('Пароль не верный')
+              this.showMessage({text: 'Пароль не верный', type: 'danger'})
              }
           }
           else{
-            this.showMessage('Нет такого пользователя')
+            this.showMessage({text: 'Нет такого пользователя', type: 'danger'})
           }
         
         });

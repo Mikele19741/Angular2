@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { User } from '../models/user.models';
 @Injectable()
 export class UserService {
     constructor(private http: HttpClient) {
@@ -8,4 +9,9 @@ export class UserService {
         
          return this.http.get('http://localhost:3000/users?email='+email);
     }
+    createNewUser(user: User) {
+        
+        return this.http.post('http://localhost:3000/users', user)
+      } 
+
 }
