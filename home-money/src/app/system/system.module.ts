@@ -10,6 +10,10 @@ import { SystemComponent } from './system.component';
 import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { DropDownDirective } from './shared/directives/dropdown.directive';
+import { BillCardComponent } from './bill-page/bill-card/bill-card.component';
+import { CurrencyCardComponent } from './bill-page/currency-card/currency-card.component';
+import { BillService } from './shared/services/bill.service';
+import { MomentPipe } from './shared/pipes/moment.pipe';
 
 @NgModule({
    
@@ -19,9 +23,11 @@ import { DropDownDirective } from './shared/directives/dropdown.directive';
      SystemRoutingModule
     
     ],
-   
+ 
     declarations: [BillPageComponent, HistoryPageComponent, PlanningPageComponent, 
-      RecordsPageComponent, SystemComponent, SidebarComponent, HeaderComponent, DropDownDirective]
+      RecordsPageComponent, SystemComponent, SidebarComponent, HeaderComponent, DropDownDirective, BillCardComponent, CurrencyCardComponent
+    , MomentPipe],
+      providers:[BillService]
   })
 export class SystemModule{
 
