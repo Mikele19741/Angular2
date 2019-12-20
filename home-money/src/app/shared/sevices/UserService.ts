@@ -9,7 +9,7 @@ export class UserService  extends BaseApi{
     }
     getUserByEmail(email: string) {
         
-       return this.get('users?email='+email)
+       return this.get('users?email='+email);
          //return this.http.get('http://localhost:3000/users?email='+email);
     }
     createNewUser(user: User) {
