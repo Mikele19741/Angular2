@@ -17,6 +17,7 @@ import { MomentPipe } from './shared/pipes/moment.pipe';
 import { AddEventComponent } from './records-page/add-event/add-event.component';
 import { AddCategoryComponent } from './records-page/add-category/add-category.component';
 import { EditCatregoryComponent } from './records-page/edit-catregory/edit-catregory.component';
+import { CategoriesSerivce } from './shared/services/categories.service';
 
 
 @NgModule({
@@ -31,7 +32,7 @@ import { EditCatregoryComponent } from './records-page/edit-catregory/edit-catre
     declarations: [BillPageComponent, HistoryPageComponent, PlanningPageComponent, 
       RecordsPageComponent, SystemComponent, SidebarComponent, HeaderComponent, DropDownDirective, BillCardComponent, CurrencyCardComponent
     , MomentPipe, AddEventComponent, AddCategoryComponent, EditCatregoryComponent],
-      providers:[BillService] 
+      providers:[BillService, CategoriesSerivce] 
   })
 export class SystemModule{
 
