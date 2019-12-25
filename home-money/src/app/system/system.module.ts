@@ -19,6 +19,10 @@ import { AddCategoryComponent } from './records-page/add-category/add-category.c
 import { EditCatregoryComponent } from './records-page/edit-catregory/edit-catregory.component';
 import { CategoriesSerivce } from './shared/services/categories.service';
 import { EventsService } from './shared/services/events.service';
+import { HistroyChartComponent } from './history-page/histroy-chart/histroy-chart.component';
+import { HistroyEventsComponent } from './history-page/histroy-events/histroy-events.component';
+import { HistroyDetailsComponent } from './history-page/histroy-details/histroy-details.component';
+import { HistroyFilterComponent } from './history-page/histroy-filter/histroy-filter.component';
 
 
 @NgModule({
@@ -32,7 +36,7 @@ import { EventsService } from './shared/services/events.service';
  
     declarations: [BillPageComponent, HistoryPageComponent, PlanningPageComponent, 
       RecordsPageComponent, SystemComponent, SidebarComponent, HeaderComponent, DropDownDirective, BillCardComponent, CurrencyCardComponent
-    , MomentPipe, AddEventComponent, AddCategoryComponent, EditCatregoryComponent],
+    , MomentPipe, AddEventComponent, AddCategoryComponent, EditCatregoryComponent, HistroyChartComponent, HistroyEventsComponent, HistroyDetailsComponent, HistroyFilterComponent],
       providers:[BillService, CategoriesSerivce, EventsService] 
   })
 export class SystemModule{
