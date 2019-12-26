@@ -1,8 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Category } from '../../shared/models/category.model';
 import { WFMEvent } from '../../shared/models/event.model';
-import { EventsService } from '../../shared/services/events.service';
-import { CategoriesSerivce } from '../../shared/services/categories.service';
+
 
 @Component({
   selector: 'wfm-histroy-events',
@@ -13,7 +12,9 @@ export class HistroyEventsComponent implements OnInit {
 
   @Input() categories: Category[] = [];
   @Input() events: WFMEvent[] = [];
-
+  searchValue = '';
+  searchPlaceholder = 'Сумма';
+  searchField = 'amount';
   constructor() {
 }
 
@@ -30,5 +31,16 @@ export class HistroyEventsComponent implements OnInit {
       'label-danger': e.type === 'outcome',
       'label-success': e.type === 'income'
     };
+  }
+
+  changeCriteria(field: string) {
+    const namesMap = {
+      amount: 'Сумма',
+      date: 'Дата',
+      category: 'Категория',
+      type: 'Тип'
+    };
+    this.searchPlaceholder = namesMap[field];
+    this.searchField = field;
   }
 }

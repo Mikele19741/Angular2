@@ -23,6 +23,7 @@ import { HistroyEventsComponent } from './history-page/histroy-events/histroy-ev
 import { HistroyDetailsComponent } from './history-page/histroy-details/histroy-details.component';
 import { HistroyFilterComponent } from './history-page/histroy-filter/histroy-filter.component';
 import { HistoryChartComponent } from './history-page/history-chart/history-chart.component';
+import { FilterPipe } from './shared/pipes/filter.pipe';
 
 
 @NgModule({
@@ -36,7 +37,7 @@ import { HistoryChartComponent } from './history-page/history-chart/history-char
  
     declarations: [BillPageComponent, HistoryPageComponent, PlanningPageComponent, 
       RecordsPageComponent, SystemComponent, SidebarComponent, HeaderComponent, DropDownDirective, BillCardComponent, CurrencyCardComponent
-    , MomentPipe, AddEventComponent, AddCategoryComponent, EditCatregoryComponent, HistroyEventsComponent, HistroyDetailsComponent, HistroyFilterComponent, HistoryChartComponent],
+    , MomentPipe, AddEventComponent, AddCategoryComponent, EditCatregoryComponent, HistroyEventsComponent, HistroyDetailsComponent, HistroyFilterComponent, HistoryChartComponent, FilterPipe],
       providers:[BillService, CategoriesSerivce, EventsService] 
   })
 export class SystemModule{
