@@ -6,9 +6,10 @@ import { HistoryPageComponent } from './history-page/history-page.component';
 import { PlanningPageComponent } from './planning-page/planning-page.component';
 import { RecordsPageComponent } from './records-page/records-page.component';
 import { HistroyDetailsComponent } from './history-page/histroy-details/histroy-details.component';
+import { AuthGuard } from '../shared/sevices/auth.guard';
 
 const routes: Routes=[
-    {path: '', component: SystemComponent, children :[
+    {path: '', component: SystemComponent, canActivate: [AuthGuard] ,children :[
         {path: 'bill', component: BillPageComponent},
         {path: 'history', component: HistoryPageComponent},
         {path: 'planning', component: PlanningPageComponent},
