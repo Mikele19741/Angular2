@@ -4,9 +4,11 @@
         </h3>
       </div>
       
-      <wfm-histroy-chart></wfm-histroy-chart>
-      
-      <wfm-histroy-events></wfm-histroy-events>
+     
+      <wfm-histroy-chart [data]="chartData"></wfm-histroy-chart>
+      <wfm-histroy-events 
+      [categories]="categories"
+    [events]="events"></wfm-histroy-events>
       
       <wfm-histroy-filter></wfm-histroy-filter>
       
